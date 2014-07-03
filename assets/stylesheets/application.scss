@@ -2,11 +2,49 @@
 *= require_self
 */
 
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
 body {
   padding-top: 10px;
-  padding-bottom: 10px;
   background-color: #eee;
   font-family: 'Roboto Slab', serif;
+}
+
+#container {
+  min-height:100%;
+  position:relative;
+}
+
+#content {
+  padding:10px;
+  padding-bottom:60px;
+}
+
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  overflow: hidden;
+  height:60px;
+  padding-top: 10px;
+
+  .row {
+    .col-md-4:nth-child(1) {
+      text-align: left;
+    }
+    .copyright {
+      text-align: center;
+    }
+    .col-md-4:nth-child(3) {
+      text-align: right;
+      padding-right: 10em;
+    }
+  }
 }
 
 .form-signin {
@@ -66,9 +104,9 @@ nav {
     display: block;
     line-height: 0;
     overflow: hidden;
-    height: 50px;
-    margin: 0 10px 0 0;
+    margin: 1px 10px 0 0;
     padding: 0;
+    color: #666;
   }
 
   ul.nav {

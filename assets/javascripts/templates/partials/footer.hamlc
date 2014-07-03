@@ -1,0 +1,10 @@
+.row{'ng-controller' => 'HomeController'}
+  .col-md-4
+  .col-md-4.copyright
+    &copy; 2014, constXife
+  .col-md-4
+    %ul.list-inline
+      %li
+        %a{href: '', 'ng-click' => 'setLang("en")'} English
+      %li
+        %a{href: '', 'ng-click' => 'setLang("ru")'} Русский

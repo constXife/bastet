@@ -1,4 +1,1 @@
-%ng-include{src: "'partials/panel'"}
-
-%div{'ng-controller' => 'InformationController'}
-  %h2 Настройки
+%h2 {{'settings' | i18next }}

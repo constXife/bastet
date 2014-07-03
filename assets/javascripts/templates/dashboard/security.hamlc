@@ -1,3 +1,1 @@
-%ng-include{src: "'partials/panel'"}
-
 %h2 {{'security' | i18next }}

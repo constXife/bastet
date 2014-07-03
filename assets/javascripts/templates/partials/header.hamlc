@@ -2,9 +2,9 @@
   .row
     .col-md-10
       %a.pull-left.navbar-brand{href: '/'}
-        %img{src: 'http://upload.wikimedia.org/wikipedia/commons/5/57/Umbrella_Corporation_logo.png',
-            width: 50,
-            title: 'Система умный дом'}
+        %span.fa-stack.fa-lg
+          %i.fa.fa-square.fa-stack-2x
+          %i.fa.fa-home.fa-stack-1x.fa-inverse
       %ul.nav.nav-pills.nav-justified
         %li{'ng-class' => "{ active: $state.includes('dashboard.information') }"}
           %a{href: '/dashboard/information'} <i class="fa fa-dashboard"></i> {{ 'information' | i18next }}
