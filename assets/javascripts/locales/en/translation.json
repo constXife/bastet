@@ -1,0 +1,11 @@
+{    
+    "account": "Account",
+    "password": "Password",
+    "login": "Log in",
+    "logout": "Log out",
+    "control_panel": "Control Panel",
+    "comfort": "Comfort",
+    "information": "Information",
+    "security": "Security",
+    "settings": "Settings"
+}

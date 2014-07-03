@@ -1,0 +1,3 @@
+%ng-include{src: "'partials/panel'"}
+
+%h2 {{'comfort' | i18next }}

@@ -1,0 +1,3 @@
+%ng-include{src: "'partials/panel'"}
+
+%h2 {{'information' | i18next }}
