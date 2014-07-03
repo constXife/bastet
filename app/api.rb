@@ -22,7 +22,6 @@ module Elf
           api_version: self.version
       )
 
-      mount Elf::API::User
       mount Elf::API::Token
     end
   end
