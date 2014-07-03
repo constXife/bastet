@@ -12,7 +12,7 @@ set :domain, 'home.constxife.ru'
 set :deploy_to, '/var/www/home.constxife.ru'
 set :repository, 'https://github.com/constXife/elf.git'
 set :branch, 'master'
-set :cmd, 'bundle exec foreman start'
+set :cmd, 'RACK_ENV=production bundle exec foreman start'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
