@@ -11,7 +11,7 @@ module Elf
 
       configure :production do
         set :assets_precompile, %w(elf.js application.css *.png *.jpg *.svg *.eot *.ttf *.woff)
-        set :assets_prefix, %w(assets vendor/assets) + File.dirname(HamlCoffeeAssets.helpers_path)
+        set :assets_prefix, ['assets', 'vendor/assets', File.dirname(HamlCoffeeAssets.helpers_path)]
         set :assets_css_compressor, :sass
         set :assets_js_compressor, :uglifier
       end
