@@ -10,7 +10,7 @@ require 'mina/rbenv'
 
 set :domain, 'home.constxife.ru'
 set :deploy_to, '/var/www/home.constxife.ru'
-set :repository, 'git@github.org:constXife/elf.git'
+set :repository, 'https://github.com/constXife/elf.git'
 set :branch, 'master'
 set :cmd, 'bundle exec foreman start'
 
