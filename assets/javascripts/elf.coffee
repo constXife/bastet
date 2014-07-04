@@ -1,3 +1,6 @@
+#= require vendor/jquery-2.1.1
+#= require vendor/bootstrap-3.2.0
+#= require vendor/d3
 #= require vendor/i18next-1.7.2.min
 #= require vendor/hamlcoffee
 #= require vendor/angular/angular-1.3

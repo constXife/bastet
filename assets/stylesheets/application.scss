@@ -1,6 +1,23 @@
 /*
+*= require vendor/bootstrap
+*= require vendor/bootstrap-theme
+*= require vendor/font-awesome
 *= require_self
 */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url('/fonts/Roboto_Slab/RobotoSlab-Regular.ttf') format('truetype');
+}
 
 html,
 body {
