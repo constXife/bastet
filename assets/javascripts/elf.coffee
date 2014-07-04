@@ -15,3 +15,5 @@
 #= require_tree ./controllers/
 #= require_tree ./services/
 #= require application
+
+#= require gauge
