@@ -167,7 +167,7 @@ DEPENDENCIES
   mina
   multi_json
   puma (~> 2.8.2)
-  rack
+  rake
   rspec (~> 3)
   simplecov
   sinatra

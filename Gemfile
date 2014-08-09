@@ -12,6 +12,7 @@ gem 'sinatra-asset-pipeline'
 gem 'grape-swagger'
 gem 'haml_coffee_assets'
 gem 'execjs'
+gem 'rake'
 
 group :development do
   gem 'letter_opener'
@@ -30,6 +31,5 @@ group :test do
 end
 
 group :production do
-  gem 'rack'
   gem 'therubyracer'
 end

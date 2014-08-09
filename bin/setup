@@ -1,4 +1,0 @@
-#!/bin/sh
-
-RACK_ENV=production bundle install --without=test development
-RACK_ENV=production bundle exec rake assets:precompile
