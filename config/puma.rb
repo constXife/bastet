@@ -1,11 +1,11 @@
+sinatra_root = File.join(File.dirname(__FILE__), '..')
+
 if ENV['RACK_ENV'] == 'production'
-  deploy_to     = "/var/www/home.constxife.ru"
-  sinatra_root  = "#{deploy_to}/current"
-  pid_file      = "#{deploy_to}/shared/puma.pid"
-  state_file    = "#{deploy_to}/shared/puma.state"
-  socket_file   = "unix://#{deploy_to}/shared/puma.sock"
-  log_file      = "#{deploy_to}/shared/log/puma.log"
-  err_log       = "#{deploy_to}/shared/log/puma_error.log"
+  pid_file      = "/tmp/elf.pid"
+  state_file    = "/tmp/elf.state"
+  socket_file   = "unix:///tmp/elf.sock"
+  log_file      = "#{sinatra_root}/log/puma.log"
+  err_log       = "#{sinatra_root}/log/puma_error.log"
 
   environment 'production'
   daemonize
