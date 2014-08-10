@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 require 'sinatra/asset_pipeline'
 require 'sinatra/asset_pipeline/task.rb'
+require File.expand_path('app/version', File.dirname(__FILE__))
 require File.expand_path('app/entities/user', File.dirname(__FILE__))
 require File.expand_path('app/apis/token', File.dirname(__FILE__))
 require File.expand_path('app/models/user', File.dirname(__FILE__))
