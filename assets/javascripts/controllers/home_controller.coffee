@@ -3,6 +3,7 @@
     $scope.user = Auth.user
     $scope.userRoles = Auth.userRoles
     $scope.accessLevels = Auth.accessLevels
+    $scope.api_version = window.api_version
 
     $scope.setLang = (lang) ->
       $i18next.options.postProcess = '';

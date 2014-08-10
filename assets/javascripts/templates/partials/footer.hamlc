@@ -1,7 +1,7 @@
 .row{'ng-controller' => 'HomeController'}
-  .col-md-4
+  .col-md-4.container
   .col-md-4.copyright
-    &copy; 2014, constXife
+    &copy; 2014 constXife, {{ api_version }}
   .col-md-4
     %ul.list-inline
       %li
