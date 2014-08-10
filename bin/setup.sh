@@ -1,8 +1,10 @@
 #!/bin/sh
 
-BASEDIR=$(dirname $0)
 echo "Installing Elf System"
 
-cd $BASEDIR/..
-BUNDLE_GEMFILE=$BASEDIR/../Gemfile bundle install --quiet --deployment
-BUNDLE_GEMFILE=$BASEDIR/../Gemfile bundle exec rake assets:precompile
+SCRIPTPATH=$( cd $(dirname $0) ; cd .. ; pwd -P )
+
+cd $SCRIPTPATH
+
+bundle install --quiet --deployment --binstubs
+bin/rake assets:precompile
