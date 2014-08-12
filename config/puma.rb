@@ -1,9 +1,9 @@
 sinatra_root = File.join(File.dirname(__FILE__), '..')
 
 if ENV['RACK_ENV'] == 'production'
-  pid_file      = "/tmp/elf.pid"
-  state_file    = "/tmp/elf.state"
-  socket_file   = "unix:///tmp/elf.sock"
+  pid_file      = "/tmp/elf-webapp.pid"
+  state_file    = "/tmp/elf-webapp.state"
+  socket_file   = "unix:///tmp/elf-webapp.sock"
   log_file      = "#{sinatra_root}/log/puma.log"
   err_log       = "#{sinatra_root}/log/puma_error.log"
 
