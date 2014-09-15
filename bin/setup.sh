@@ -6,5 +6,5 @@ SCRIPTPATH=$( cd $(dirname $0) ; cd .. ; pwd -P )
 
 cd $SCRIPTPATH
 
-bundle install --deployment --binstubs
+/usr/local/bin/bundle install --deployment --binstubs
 bin/rake assets:precompile
