@@ -6,4 +6,4 @@ SCRIPTPATH=$( cd $(dirname $0) ; cd .. ; pwd -P )
 
 cd $SCRIPTPATH
 
-bin/pumactl -F config/puma.rb $1
+bin/reel-rack config.ru $1

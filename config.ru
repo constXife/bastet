@@ -1,17 +1,11 @@
-require 'bundler'
-Bundler.require
-require 'sinatra/asset_pipeline'
-require 'haml_coffee_assets'
+require 'reel'
+require 'celluloid/autostart'
+require 'celluloid/io'
 
-require File.expand_path('app/version', File.dirname(__FILE__))
-require File.expand_path('app/entities/user', File.dirname(__FILE__))
-require File.expand_path('app/apis/token', File.dirname(__FILE__))
-require File.expand_path('app/models/user', File.dirname(__FILE__))
-require File.expand_path('app/front', File.dirname(__FILE__))
-require File.expand_path('app/api', File.dirname(__FILE__))
+require './app.rb'
 
-map '/api' do
-  run Elf::API::App
-end
+Dir.glob('app/**/*.rb').each { |f| require File.join(File.dirname(__FILE__), f) }
 
-run Elf::Front::App
+Elf::Application.supervise_as :reel
+
+sleep

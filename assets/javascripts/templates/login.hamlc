@@ -1,6 +1,0 @@
-.container
-  %form.form-signin{role: 'form', name: 'loginForm', 'ng-submit' => 'login()'}
-    %h2.form-signin-heading {{'control_panel' | i18next}}
-    %input.form-control{placeholder: "{{'account' | i18next}}", required: true, type: 'text', 'data-ng-model' => 'username', autofocus: true}
-    %input.form-control{placeholder: "{{'password' | i18next}}", required: true, type: 'password', 'data-ng-model' => 'password'}
-    %button.btn.btn-lg.btn-primary.btn-block{type: 'submit'} {{'login' | i18next}}
