@@ -25,7 +25,7 @@ module Elf
 
     def route(socket)
       if socket.url == '/api'
-        #
+        Elf::Updater::API::Base.new(socket)
       else
         info "Invalid socket request for: #{socket.url}"
         socket.close

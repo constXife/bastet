@@ -1,3 +1,6 @@
 .bundle/
 .sass-cache/
 .idea/
+/front/.sass-cache
+/front/.tmp
+/public/*
