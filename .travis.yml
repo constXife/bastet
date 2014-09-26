@@ -1,0 +1,25 @@
+language: ruby
+rvm:
+  - 2.1.2
+before_install:
+  - npm install -g grunt-cli
+  - gem install compass
+install:
+  - bundle install --without=production
+  - cd front
+  - npm install
+  - bower install
+script:
+  - grunt build
+after_success:
+  - cd ..
+  - GZIP=-9 tar -czf dist.tar.gz *
+  - ls
+deploy:
+  provider: releases
+  api-key: "72b4c4f9229e915eb3005cd5d2481438c1d4b178"
+  file: "dist.tar.gz"
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true

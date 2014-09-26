@@ -9,7 +9,7 @@
  */
 angular.module('frontApp')
   .controller('MainCtrl', function ($scope, $rootScope) {
-    var socket = new WebSocket("ws://" + window.location.hostname + ":3001/api");
+    var socket = new WebSocket("ws://" + window.location.hostname + "/api");
     $rootScope.dist = {};
     $scope.isConnected = false;
 
