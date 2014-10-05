@@ -13,6 +13,7 @@ script:
   - grunt build
 after_success:
   - cd ..
+  - rm -rf front
   - GZIP=-9 tar -czf dist.tar.gz *
   - ls
 deploy:
