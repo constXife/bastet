@@ -1,13 +1,15 @@
-.ui.card.dark
-  .content
-    %a.header {{sensor.name}}
-    .ui.statistics
-      .purple.statistic
-        .value
-          %i.fa.fa-flask
-          {{ sensor.data[0].value | number : 0 }}˚
-        .label
-          %div{'am-time-ago' => 'sensor.data[0].created_at'}
+.ui.horizontal.list{'ng-if' => 'sensors.length'}
+  .item{'ng-repeat' => 'sensor in sensors'}
+    .ui.card.dark
+      .main.content
+        %a.header {{sensor.name}}
+        .ui.statistics
+          .purple.statistic
+            .value
+              %i.fa.fa-flask
+              {{ sensor.data[0].value | number : 0 }}˚
+            .label
+              %div{'am-time-ago' => 'sensor.data[0].created_at'}
 
 -#.ui.statistics
 -#  .blue.statistic

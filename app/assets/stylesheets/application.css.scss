@@ -114,6 +114,10 @@ nav {
   margin: 1em 0;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .donation-meter {
     margin-left: 30px;
     width: 100px;
@@ -178,11 +182,13 @@ strong { display: block; text-align: center; }
 }
 
 .dark {
-  text-align: center;
+  .main.content {
+    text-align: center;
 
-  .ui.statistics > .statistic {
-    max-width: inherit;
-    float: none;
-    margin: 0 0 0 -1em;
+    .ui.statistics > .statistic {
+      max-width: inherit;
+      float: none;
+      margin: 0 0 0 -1em;
+    }
   }
 }

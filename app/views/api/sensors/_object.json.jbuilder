@@ -1,4 +1,8 @@
 json.(sensor, :id,
               :name,
               :sid)
-json.data sensor_data if sensor_data
+if defined? sensor_data
+  json.data sensor_data
+else
+  json.data [sensor.sensor_data.first]
+end
