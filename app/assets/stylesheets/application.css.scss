@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require metricsgraphics/metricsgraphics
+ *= require semantic-ui/semantic
+ *= require font-awesome
+ *= require_self
+ */
+
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+body {
+    padding-top: 10px;
+    background-color: #eee;
+    font-family: 'Roboto Slab', serif;
+}
+
+#container {
+    min-height:100%;
+    position:relative;
+}
+
+#content {
+    padding:10px;
+    padding-bottom:60px;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    overflow: hidden;
+    height:60px;
+    padding-top: 10px;
+
+.row {
+.col-md-4:nth-child(1) {
+    text-align: left;
+}
+.copyright {
+    text-align: center;
+}
+.col-md-4:nth-child(3) {
+    text-align: right;
+    padding-right: 10em;
+}
+}
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#profile {
+li.dropdown.active {
+> a {
+      background: #ebebeb;
+      color: #666;
+  }
+}
+}
+
+h2, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  margin: 1em 0;
+}
+
+.donation-meter {
+    margin-left: 30px;
+    width: 100px;
+.glass {
+    background: #e5e5e5;
+    border-radius: 100px 100px 0 0;
+    display: block;
+    height: 300px;
+    margin: 0 35px 10px;
+    padding: 5px;
+    position: relative;
+    width: 20px;
+}
+.amount {
+    background: #f34e54;
+    border-radius: 100px;
+    display: block;
+    width: 20px;
+    position: absolute;
+    bottom: 5px;
+}
+strong { display: block; text-align: center; }
+.goal {
+    font-size: 30px;
+}
+.total {
+    font-size: 16px;
+    position: absolute;
+    right: 35px;
+}
+}
+
+.bulb {
+    background: #e5e5e5;
+    border-radius: 100px;
+    display: block;
+    height: 50px;
+    margin: 0 35px 10px;
+    padding: 5px;
+    position: relative;
+    top: -20px;
+    right: 15px;
+    width: 50px;
+.red-circle {
+    background: #f34e54;
+    border-radius: 100px;
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+.filler {
+    background: #f34e54;
+    border-radius: 100px 100px 0 0;
+    display: block;
+    height: 30px;
+    width: 20px;
+    position: relative;
+    top: -65px;
+    right: -15px;
+    z-index: 30;
+}
+}
+
+.dark {
+  text-align: center;
+
+  .ui.statistics > .statistic {
+    max-width: inherit;
+    float: none;
+    margin: 0 0 0 -1em;
+  }
+}

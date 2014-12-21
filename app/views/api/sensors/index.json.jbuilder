@@ -1,0 +1,1 @@
+json.sensors @sensors, partial: 'object', as: :sensor

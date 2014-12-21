@@ -1,0 +1,30 @@
+.ui.card.dark
+  .content
+    %a.header {{sensor.name}}
+    .ui.statistics
+      .purple.statistic
+        .value
+          %i.fa.fa-flask
+          {{ sensor.data[0].value | number : 0 }}˚
+        .label
+          %div{'am-time-ago' => 'sensor.data[0].created_at'}
+
+-#.ui.statistics
+-#  .blue.statistic
+-#    .value
+-#      %i.fa.fa-flask
+-#      22˚
+-#    .label
+-#      %div{'am-time-ago' => 'sensor.data[0].created_at'}
+-#  .purple.statistic
+-#    .value
+-#      %i.fa.fa-flask
+-#      22˚
+-#    .label
+-#      %div{'am-time-ago' => 'sensor.data[0].created_at'}
+-#  .red.statistic
+-#    .value
+-#      %i.fa.fa-flask
+-#      22˚
+-#    .label
+-#      %div{'am-time-ago' => 'sensor.data[0].created_at'}
