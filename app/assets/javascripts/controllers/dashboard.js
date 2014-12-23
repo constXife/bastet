@@ -1,7 +1,8 @@
 "use strict";
 
 angular.module('bastet')
-  .controller('DashboardCtl', ['$scope', '$log', '$timeout', '$window', 'config', 'Sensor', function($scope, $log, $timeout, $window, config, Sensor) {
+  .controller('DashboardCtl', ['$scope', '$log', '$timeout', '$window', 'config', 'Sensor',
+    function($scope, $log, $timeout, $window, config, Sensor) {
     $scope.isLoading = true;
     $scope.sensors = Sensor.index();
     $scope.sensors.$promise.then(function() {
@@ -9,6 +10,7 @@ angular.module('bastet')
     });
 
     var ws = new WebSocket('ws://' + config.websockets_host + '/ws/dashboard');
+    $log.debug('WS host is: ' + 'ws://' + config.websockets_host + '/ws/dashboard');
 
     ws.onopen = function() {
       $log.debug('Connection opened...');

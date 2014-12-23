@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'application#home'
 
-  namespace :api do
+  namespace :api, defaults: { format: 'json' } do
     resources :sensors
   end
 end

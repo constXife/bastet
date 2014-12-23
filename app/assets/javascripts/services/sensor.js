@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-  .module("bastet.services").factory("Sensor", function($resource) {
+  .module("bastet.services").factory("Sensor", ['$resource', function($resource) {
     return $resource("/api/sensors/:id", {id: '@id'},
       {
         index: {
@@ -25,4 +25,4 @@ angular
         }
       }
     )
-  });
+  }]);

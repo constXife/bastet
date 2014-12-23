@@ -1,6 +1,8 @@
 module API
   class SensorsController < ApplicationController
     before_action :set_sensor, only: [:update, :destroy]
+    skip_before_filter :verify_authenticity_token, :only => [:create]
+    respond_to :json
 
     has_scope :daily
 
@@ -9,16 +11,15 @@ module API
     end
 
     def create
-      @sensor = Sensor.find_or_create_by!(sid: sensor_params['id'].to_i)
+      @sensor = Sensor.find_or_create_by!(sid: sensor_params['sid'].to_i)
 
-      sensor = ::Sensor.find_or_create_by!(sid: sensor_params['id'].to_i)
       sensor_data_hash = {
-          sensor_id: sensor.id,
-          value: data['value'].to_f,
-          data_type: data['type'],
-          raw_data: data.to_json
+          sensor_id: @sensor.id,
+          value: sensor_params['value'].to_f,
+          data_type: sensor_params['type'],
+          raw_data: sensor_params.to_json
       }
-      SensorData.create!(sensor_data_hash)
+      SensorDatum.create!(sensor_data_hash)
 
       result = JSON.parse(render_to_string(template: 'api/sensors/show.json'))
       $redis.publish 'dashboard', result.to_json
@@ -44,7 +45,7 @@ module API
   private
 
     def sensor_params
-      params.require(:sensor).permit(:id, :sid)
+      params.require(:sensor).permit(:id, :sid, :value, :type)
     end
 
     def set_sensor
