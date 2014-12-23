@@ -12,3 +12,6 @@
 /log/*
 !/log/.keep
 /tmp
+/config/database.yml
+/config/redis.yml
+/config/application.yml

@@ -22,5 +22,11 @@ module Elf
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    application_config = File.expand_path('config/application.yml', Rails.root)
+
+    if File.exist? application_config
+      config.custom = YAML.load(ERB.new(File.read(application_config)).result)[Rails.env].deep_symbolize_keys!
+    end
   end
 end

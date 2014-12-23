@@ -1,3 +1,7 @@
 json.sensor do
-  json.partial! 'object', sensor: @sensor, sensor_data: @sensor_data
+  if @sensor_data
+    json.partial! 'api/sensors/object', sensor: @sensor, sensor_data: @sensor_data
+  else
+    json.partial! 'api/sensors/object', sensor: @sensor
+  end
 end

@@ -18,7 +18,10 @@ module API
           data_type: data['type'],
           raw_data: data.to_json
       }
-      sensor_data = SensorData.create!(sensor_data_hash)
+      SensorData.create!(sensor_data_hash)
+
+      result = JSON.parse(render_to_string(template: 'api/sensors/show.json'))
+      $redis.publish 'dashboard', result.to_json
 
       respond_with(@sensor, :created)
     end

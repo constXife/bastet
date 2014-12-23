@@ -24,9 +24,10 @@
 //= require angular-animate
 //= require angular-moment
 
-//= semantic-ui/semantic
+//= require semantic-ui/semantic
 
 //= require modules
+//= require config
 //= require routes
 //= require setup
 //= require_tree ./directives
