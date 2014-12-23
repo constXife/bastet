@@ -1,5 +1,5 @@
 "use strict";
 
-angular.module('elf')
+angular.module('bastet')
   .controller('MainCtrl', function($scope) {
   });

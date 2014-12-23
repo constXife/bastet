@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('elf.constants')
+angular.module('bastet.constants')
   .constant('routes', {
     get: function($stateProvider) {
       $stateProvider

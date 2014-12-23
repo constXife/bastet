@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('elf')
+angular.module('bastet')
   .config(function($httpProvider, $stateProvider, $urlRouterProvider, $logProvider, config, routes) {
     $httpProvider.defaults.headers.common.Accept = 'application/json';
 
@@ -12,6 +12,6 @@ angular.module('elf')
   }
 );
 
-angular.module('elf').run(function(amMoment) {
+angular.module('bastet').run(function(amMoment) {
   amMoment.changeLocale('ru');
 });

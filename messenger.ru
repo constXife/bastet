@@ -27,7 +27,7 @@ class MessengerApp < Reel::Server::HTTP
   def on_connection(connection)
     while request = connection.request
       if request.websocket?
-        info "Received WebSocket connection"
+        info 'Received WebSocket connection'
 
         connection.detach
 

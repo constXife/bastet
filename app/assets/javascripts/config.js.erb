@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('elf.constants')
+angular.module('bastet.constants')
   .constant('config', {
     is_development: <%= Rails.env.development? %>,
     websockets_host: '<%= Rails.application.config.custom[:websockets_host] %>'

@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-  .module("elf.services").factory("Sensor", function($resource) {
+  .module("bastet.services").factory("Sensor", function($resource) {
     return $resource("/api/sensors/:id", {id: '@id'},
       {
         index: {

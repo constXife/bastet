@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('elf')
+angular.module('bastet')
   .controller('DashboardCtl', ['$scope', '$log', '$timeout', '$window', 'config', 'Sensor', function($scope, $log, $timeout, $window, config, Sensor) {
     $scope.isLoading = true;
     $scope.sensors = Sensor.index();
@@ -8,7 +8,7 @@ angular.module('elf')
       $scope.isLoading = false;
     });
 
-    var ws = new WebSocket('ws://' + config.websockets_host + '/');
+    var ws = new WebSocket('ws://' + config.websockets_host + '/ws/dashboard');
 
     ws.onopen = function() {
       $log.debug('Connection opened...');

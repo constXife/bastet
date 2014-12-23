@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-  .module('elf')
+  .module('bastet')
   .directive('elGraph', function($timeout) {
     return {
       restrict: 'E',

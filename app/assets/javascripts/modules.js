@@ -1,9 +1,9 @@
 //= require_self
 //= require_tree ./services
 
-angular.module('elf.services', []);
-angular.module('elf.constants', []);
-angular.module('elf.namespace', ['elf.constants', 'elf.services']);
-angular.module('elf', [
-  'elf.namespace', 'ngAnimate', 'ngResource', 'ui.router', 'templates', 'angularMoment'
+angular.module('bastet.services', []);
+angular.module('bastet.constants', []);
+angular.module('bastet.namespace', ['bastet.constants', 'bastet.services']);
+angular.module('bastet', [
+  'bastet.namespace', 'ngAnimate', 'ngResource', 'ui.router', 'templates', 'angularMoment'
 ]);
