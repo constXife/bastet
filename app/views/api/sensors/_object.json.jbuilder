@@ -1,6 +1,6 @@
 json.(sensor, :id,
-              :name,
               :sid)
+json.name sensor.to_s
 if defined? sensor_data
   json.data sensor_data
 else
