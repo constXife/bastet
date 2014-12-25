@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require moment-with-locales
+//= require moment-timezone-with-data
 //= require d3
 //= require metricsgraphics
 
@@ -25,6 +26,7 @@
 //= require angular-moment
 
 //= require semantic-ui/semantic
+//= require rickshaw
 
 //= require modules
 //= require config

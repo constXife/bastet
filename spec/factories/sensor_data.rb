@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  value      :float            not null
-#  sensor_id  :integer
+#  sensor_id  :integer          not null
 #  data_type  :string           not null
 #  data_date  :datetime
 #  raw_data   :jsonb            not null

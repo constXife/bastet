@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  value      :float            not null
-#  sensor_id  :integer
+#  sensor_id  :integer          not null
 #  data_type  :string           not null
 #  data_date  :datetime
 #  raw_data   :jsonb            not null
@@ -21,7 +21,5 @@ class SensorDatum < ActiveRecord::Base
 
   scope :daily, -> (*) do
     where('created_at > ? AND created_at < ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day)
-      .group('id', "DATE_PART('hour', created_at)")
-      .limit(1440)
   end
 end

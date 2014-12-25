@@ -11,7 +11,7 @@
     .item{'ng-repeat' => 'sensor in sensors'}
       .ui.card.dark
         .main.content
-          %span.header {{sensor.name}}
+          %a.header{'ui-sref' => 'sensors.show({sensor_id: sensor.id})'} {{sensor.name}}
           .ui.statistics
             .purple.statistic
               .value

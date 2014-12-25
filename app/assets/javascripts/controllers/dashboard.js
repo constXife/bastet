@@ -50,7 +50,6 @@ angular.module('bastet')
 
           $scope.$apply(function() {
             $scope.sensors[i] = sensor;
-            $scope.sensors[i].data[0].value = 30.2423;
           });
         }
       }

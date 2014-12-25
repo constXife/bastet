@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141224183836) do
 
   create_table "sensor_data", force: :cascade do |t|
     t.float    "value",      null: false
-    t.integer  "sensor_id"
+    t.integer  "sensor_id",  null: false
     t.string   "data_type",  null: false
     t.datetime "data_date"
     t.jsonb    "raw_data",   null: false

@@ -14,5 +14,21 @@ angular.module('bastet.constants')
             "header": { templateUrl: 'shared/header.html' }
           }
         })
+        .state('sensors', {
+          url: '/sensors',
+          abstract: true,
+          views: {
+            "header": { templateUrl: 'shared/header.html' }
+          }
+        })
+        .state('sensors.show', {
+          url: '/:sensor_id/',
+          views: {
+            "@": {
+              controller: 'SensorsShowCtl',
+              templateUrl: 'sensors/show.html'
+            }
+          }
+        })
     }
   });
