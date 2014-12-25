@@ -21,5 +21,6 @@ class SensorDatum < ActiveRecord::Base
 
   scope :daily, -> (*) do
     where('created_at > ? AND created_at < ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day)
+      .group('id', "DATE_PART('hour', created_at)")
   end
 end
