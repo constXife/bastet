@@ -2,11 +2,13 @@
   .ui.active.inverted.dimmer{'ng-show' => 'isLoading'}
     .ui.indeterminate.text.loader Загрузка сенсора
 
+  %h1.ui.header.text-center {{sensor.name}}
+
   .ui.horizontal.list{'ng-show' => '!isLoading'}
     .item
       .ui.card.dark
         .main.content
-          %span.header {{sensor.name}}
+          %span.header Текущее
           .ui.statistics
             .purple.statistic
               .value
@@ -14,6 +16,31 @@
                 {{ sensor.data[0].value | number : 0 }}˚
               .label
                 %div{'am-time-ago' => 'sensor.data[0].created_at'}
+
+    .item
+      .ui.card.dark
+        .main.content
+          %span.header Среднее за день
+          .ui.statistics
+            .purple.statistic
+              .value
+                %i.fa.fa-flask
+                {{ sensor.average | number : 0 }}˚
+              .label
+                &nbsp;
+
+    .item
+      .ui.card.dark
+        .main.content
+          %span.header Самое низкое за день
+          .ui.statistics
+            .purple.statistic
+              .value
+                %i.fa.fa-flask
+                {{ sensor.min.value | number : 0 }}˚
+              .label
+                %div
+                  в {{ sensor.min.created_at | amDateFormat:'hh:mm:ss'}}
 
   %h3 График изменений
   #chart_container
