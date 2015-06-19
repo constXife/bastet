@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.2'
 
 gem 'pg'
 
@@ -18,8 +18,8 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'angularjs-rails', '~> 1.3.2'
-gem 'angular-rails-templates', '~> 0.1.3'
+gem 'angularjs-rails', '~> 1.4.0'
+gem 'angular-rails-templates', '~> 0.2.0'
 gem 'haml-rails'
 
 gem 'kaminari'
@@ -41,7 +41,7 @@ gem 'annotate', '~> 2.6.5'
 gem 'redis-rails'
 gem 'foreman'
 gem 'responders', '~> 2.0'
-gem 'quiet_assets', '~> 1.0.1'
+gem 'quiet_assets', '~> 1.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
