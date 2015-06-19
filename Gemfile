@@ -31,18 +31,17 @@ gem 'font-awesome-rails'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'puma'
-
-gem 'reel', '~> 0.5.0'
-gem 'reel-rack'
+gem 'em-websocket'
+gem 'em-hiredis'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 gem 'annotate', '~> 2.6.5'
-gem 'celluloid-redis'
 gem 'redis-rails'
 gem 'foreman'
 gem 'responders', '~> 2.0'
+gem 'quiet_assets', '~> 1.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,7 +56,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
 
-  gem 'quiet_assets', '~> 1.0.1'
   gem 'rails_best_practices'
   gem 'factory_girl_rails'
 end

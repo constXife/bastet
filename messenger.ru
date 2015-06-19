@@ -1,47 +1,44 @@
-require 'reel'
-require 'celluloid/autostart'
-require 'celluloid/io'
-require 'celluloid/redis'
+require 'em-websocket'
+require 'em-hiredis'
 require 'json'
 require 'yaml'
 
-require File.join(File.dirname(__FILE__), 'lib', 'messenger', 'notifier.rb')
-
 rails_env = ENV['RAILS_ENV'] || 'development'
 config_file = File.join(File.dirname(__FILE__), 'config', 'redis.yml')
+config = YAML.load_file(config_file)[rails_env]
 
-if File.exist?(config_file)
-  config = YAML.load_file(config_file)[rails_env]
-  $redis = Redis.new(config.merge(:driver => :celluloid))
-end
+EM.run do
+  @channel = EM::Channel.new
 
-class MessengerApp < Reel::Server::HTTP
-  include Celluloid::Logger
+  @redis = EM::Hiredis.connect("redis://#{config['host']}:6379")
+  @pubsub = @redis.pubsub
+  puts "subscribing to redis (#{config['host']})"
+  @pubsub.subscribe('dashboard')
+  @pubsub.on(:message){|channel, message|
+    if rails_env == 'development'
+      puts "redis -> #{channel}: #{message}"
+    end
+    @channel.push({event: 'sensor', data: message}.to_json)
+  }
 
-  def initialize(host = '127.0.0.1', port = 9292)
-    info "Reel starting on http://#{host}:#{port}"
+  EventMachine::WebSocket.start(:host => '127.0.0.1', :port => 9292) do |ws|
+    puts 'Establishing websocket'
 
-    super(host, port, &method(:on_connection))
-  end
-
-  def on_connection(connection)
-    while request = connection.request
-      if request.websocket?
-        info 'Received WebSocket connection'
-
-        connection.detach
-
-        route request.websocket
-        return
+    ws.onopen do
+      puts 'client connected'
+      puts 'subscribing to channel'
+      sid = @channel.subscribe do |msg|
+        puts "sending: #{msg}" if rails_env == 'development'
+        ws.send msg
       end
+
+      ws.onmessage { |msg|
+        ws.send 'Pong' if msg == 'ping'
+      }
+
+      ws.onclose {
+        @channel.unsubscribe(sid)
+      }
     end
   end
-
-  def route(socket)
-    Messenger::Notifier.new(socket)
-  end
 end
-
-MessengerApp.supervise_as :reel
-
-sleep

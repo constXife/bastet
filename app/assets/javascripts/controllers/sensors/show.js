@@ -1,40 +1,37 @@
 "use strict";
 
 angular.module('bastet')
-  .controller('SensorsShowCtl', ['$scope', '$log', '$stateParams', '$timeout', '$window', 'config', 'Sensor',
-    function($scope, $log, $stateParams, $timeout, $window, config, Sensor) {
+  .controller('SensorsShowCtl', ['$scope', '$log', '$stateParams', '$timeout', '$window', '$websocket', 'config', 'Sensor',
+    function($scope, $log, $stateParams, $timeout, $window, $websocket, config, Sensor) {
       $scope.isLoading = true;
       $scope.sensor = Sensor.show({id: $stateParams.sensor_id, daily: true});
       $scope.sensor.$promise.then(function() {
         $scope.isLoading = false;
       });
 
-      var ws = new WebSocket('ws://' + config.websockets_host + '/ws/dashboard');
-      $log.debug('WS host is: ' + 'ws://' + config.websockets_host + '/ws/dashboard');
+      var ws = new $websocket.$new('ws://localhost:9292/ws/dashboard');
+      $log.debug('WS host is: ' + 'ws://localhost:9292/ws/dashboard');
 
-      ws.onopen = function() {
+      ws.$on('$open', function () {
         $log.debug('Connection opened...');
 
         $timeout(function() {
-          ws.send('');
+          $log.debug('ping');
+          ws.$emit('pong', {});
         }, 30000, false);
-      };
+      });
 
-      ws.onclose = function() {
+      ws.$on('$close', function () {
         $log.debug('Connection closed...');
         $timeout.cancel();
-      };
+      });
 
-      $window.onbeforeunload = function() {
-        $log.debug('Closing page');
-        ws.onclose = function () {};
-        ws.close();
-      };
+      ws.$on('pong', function () {
+        console.log('pong');
+      });
 
-      ws.onmessage = function(evt) {
-        $log.debug('message');
-
-        var data = JSON.parse(evt.data);
+      ws.$on('sensor', function (data) {
+        var data = JSON.parse(data);
 
         if (!data) {
           $log.debug('Empty or corrupted data');
@@ -47,8 +44,11 @@ angular.module('bastet')
 
         if ($scope.sensor.id == sensor.id) {
           $scope.$apply(function() {
-            $scope.sensor = sensor;
+            Sensor.show({id: $stateParams.sensor_id, daily: true}).$promise.then(function(sensor) {
+              $log.debug('Data updated');
+              $scope.sensor = sensor;
+            });
           });
         }
-      };
+      });
     }]);

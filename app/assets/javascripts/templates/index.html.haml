@@ -11,6 +11,7 @@
     .item{'ng-repeat' => 'sensor in sensors'}
       .ui.card.dark
         .main.content
+          .left.floated.sensor-indicator.success.animation{title: 'Связь с сенсором в порядке.'}
           %a.header{'ui-sref' => 'sensors.show({sensor_id: sensor.id})'} {{sensor.name}}
           .ui.statistics
             .purple.statistic

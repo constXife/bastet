@@ -2,7 +2,8 @@
   .ui.active.inverted.dimmer{'ng-show' => 'isLoading'}
     .ui.indeterminate.text.loader Загрузка сенсора
 
-  %h1.ui.header.text-center {{sensor.name}}
+  %h1.ui.header.text-center
+    {{sensor.name}}
 
   .ui.horizontal.list{'ng-show' => '!isLoading'}
     .item
@@ -41,8 +42,3 @@
               .label
                 %div
                   в {{ sensor.min.created_at | amDateFormat:'hh:mm:ss'}}
-
-  %h3 График изменений
-  #chart_container
-    #y_axis
-    %bas-graph#graph{'sensor' => '{{sensor}}'}
