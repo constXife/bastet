@@ -1,7 +1,8 @@
 json.(sensor, :id,
               :sid)
 json.name sensor.to_s
-if defined? sensor_data
+
+if defined? sensor_data && sensor_data.length > 0
   json.data sensor_data
   json.average sensor_data.map(&:value).inject(0, &:+)/sensor_data.length
   json.min do
