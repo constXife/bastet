@@ -4,7 +4,15 @@ json.name sensor.to_s
 
 if defined? sensor_data && sensor_data.length > 0
   json.data sensor_data
-  json.average sensor_data.map(&:value).inject(0, &:+)/sensor_data.length
+
+  sensor_data_map = sensor_data.map(&:value).inject(0, &:+)
+  average = 0
+  if sensor_data_map > 0
+    average = sensor_data_map/sensor_data.length
+  end
+
+  json.average average
+
   json.min do
     min = sensor_data.min_by {|x| x.value}
     json.value min.value
