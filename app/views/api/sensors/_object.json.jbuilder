@@ -2,7 +2,7 @@ json.(sensor, :id,
               :sid)
 json.name sensor.to_s
 
-if defined? sensor_data && sensor_data.length > 0
+if defined?(sensor_data) && sensor_data.length > 0
   json.data sensor_data
 
   sensor_data_map = sensor_data.map(&:value).inject(0, &:+)

@@ -1,1 +1,3 @@
-json.sensors @sensors, partial: 'object', as: :sensor
+json.sensors do
+  json.array! @sensors, partial: 'object', as: :sensor
+end
