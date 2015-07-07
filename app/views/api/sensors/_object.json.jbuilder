@@ -1,5 +1,6 @@
 json.(sensor, :id,
-              :sid)
+              :sid,
+              :status)
 json.name sensor.to_s
 
 if defined?(sensor_data) && sensor_data.length > 0

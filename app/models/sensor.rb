@@ -17,4 +17,12 @@ class Sensor < ActiveRecord::Base
   def to_s
     name || sid
   end
+
+  def status
+    if sensor_data.last.created_at > 1.day.ago
+      'ok'
+    else
+      'fail'
+    end
+  end
 end

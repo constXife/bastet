@@ -215,6 +215,8 @@ strong { display: block; text-align: center; }
 .detail { position: relative; margin-top: -300px; }
 
 .sensor-indicator {
+  opacity: 0.8;
+
   &.success {
     margin: 0 auto;
     width: 12px;
@@ -233,10 +235,35 @@ strong { display: block; text-align: center; }
     box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 3px 1px, inset #304701 0 -1px 5px, #89FF00 0 2px 8px;
     animation: blinkGreen 0.5s infinite;
   }
+
+  &.fail {
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    background-color: #ff6e00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 3px 1px, inset #304701 0 -1px 5px, #ff6e00 0 2px 8px;
+  }
+
+  &.fail.animation {
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    background-color: #ff6e00;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 3px 1px, inset #472e00 0 -1px 5px, #ff6e00 0 2px 8px;
+    animation: blinkGreen 0.5s infinite;
+  }
 }
 
 @keyframes blinkGreen {
   from { background-color: #ABFF00; }
   50% { background-color: #609600; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #608006 0 -1px 9px, #ABFF00 0 2px 0; }
   to { background-color: #ABFF00; }
+}
+
+@keyframes blinkRed {
+  from { background-color: #ff6e00; }
+  50% { background-color: #966400; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #804510 0 -1px 9px, #ff6e00 0 2px 0; }
+  to { background-color: #ff6e00; }
 }
