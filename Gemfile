@@ -22,7 +22,7 @@ gem 'angular-rails-templates', '~> 0.2.0'
 gem 'haml-rails'
 
 gem 'kaminari'
-gem 'pry-rails'
+gem 'jazz_hands', github: 'constXife/jazz_hands'
 gem 'has_scope'
 gem 'font-awesome-rails'
 

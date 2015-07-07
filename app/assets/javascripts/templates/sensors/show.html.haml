@@ -6,7 +6,7 @@
     {{sensor.name}}
 
   .ui.horizontal.list{'ng-show' => '!isLoading'}
-    .item
+    .item{'ng-show' => 'sensor.data.length > 0'}
       .ui.card.dark
         .main.content
           %span.header Текущее
@@ -18,7 +18,7 @@
               .label
                 %div{'am-time-ago' => 'sensor.data[0].created_at'}
 
-    .item
+    .item{'ng-show' => 'sensor.average'}
       .ui.card.dark
         .main.content
           %span.header Среднее за день
@@ -30,7 +30,7 @@
               .label
                 &nbsp;
 
-    .item
+    .item{'ng-show' => 'sensor.min'}
       .ui.card.dark
         .main.content
           %span.header Самое низкое за день
