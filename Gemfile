@@ -22,7 +22,6 @@ gem 'angular-rails-templates', '~> 0.2.0'
 gem 'haml-rails'
 
 gem 'kaminari'
-gem 'jazz_hands', github: 'constXife/jazz_hands'
 gem 'has_scope'
 gem 'font-awesome-rails'
 
@@ -54,6 +53,7 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'faker'
+  gem 'jazz_hands', github: 'constXife/jazz_hands'
 
   gem 'rails_best_practices'
   gem 'factory_girl_rails'
