@@ -55,7 +55,7 @@ GEM
       railties (>= 3.1)
       sprockets (~> 2)
       tilt
-    angularjs-rails (1.4.0)
+    angularjs-rails (1.4.2)
     annotate (2.6.10)
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
