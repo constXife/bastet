@@ -1,7 +1,10 @@
 language: ruby
+addons:
+  postgresql: "9.4"
 rvm:
   - "2.2.0"
-before_install: bin/setup
+before_install:
+  - cp config/database.yml.travis config/database.yml
 install:
   - bundle install --without production
   - bin/rake db:setup
