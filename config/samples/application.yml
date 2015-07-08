@@ -1,7 +1,11 @@
-development:
+default: &default
   websockets_host: localhost:9292
 
-test:
+development:
+  <<: *default
 
+test:
+  <<: *default
 
 production:
+  <<: *default
