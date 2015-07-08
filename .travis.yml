@@ -4,7 +4,7 @@ addons:
 rvm:
   - "2.2.0"
 before_install:
-  - cp config/samples/database.yml.travis config/database.yml
+  - cp config/samples/database.travis.yml config/database.yml
 install:
   - bundle install --without production
   - bin/rake db:setup
