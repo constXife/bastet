@@ -1,3 +1,4 @@
+# API module
 module API
   # Sensors controller
   class SensorsController < ApplicationController
