@@ -14,10 +14,12 @@ class Sensor < ActiveRecord::Base
 
   validates :sid, presence: true
 
+  # to_s override
   def to_s
     name || sid
   end
 
+  # sensor status
   def status
     if sensor_data.last.created_at > 1.day.ago
       'ok'

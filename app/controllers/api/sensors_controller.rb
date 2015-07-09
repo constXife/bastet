@@ -1,4 +1,5 @@
 module API
+  # Sensors controller
   class SensorsController < ApplicationController
     before_action :set_sensor, only: [:update, :destroy]
     skip_before_filter :verify_authenticity_token, :only => [:create]
@@ -6,10 +7,12 @@ module API
 
     has_scope :daily
 
+    # List of sensors
     def index
       @sensors = Sensor.all
     end
 
+    # Receive data from sensors and store it
     def create
       @sensor = Sensor.find_or_create_by!(sid: sensor_params['sid'].to_i)
 
@@ -27,15 +30,18 @@ module API
       respond_with(@sensor, :created)
     end
 
+    # Show sensor
     def show
       @sensor = Sensor.find(params[:id])
       @sensor_data = apply_scopes(SensorDatum).where(sensor_id: @sensor.id)
     end
 
+    # Update sensor
     def update
       respond_with(@sensor)
     end
 
+    # Destroy sensor
     def destroy
       @sensor.destroy
 
