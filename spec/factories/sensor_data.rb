@@ -17,6 +17,7 @@ FactoryGirl.define do
     value { rand(23.0..32.0) }
     sensor_id 1
     data_type 'temperature'
+    raw_data { {value: 1} }
     created_at { (rand(0..11)).months.ago }
   end
 end
