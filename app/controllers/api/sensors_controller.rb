@@ -18,10 +18,10 @@ module API
       @sensor = Sensor.find_or_create_by!(sid: sensor_params['sid'].to_i)
 
       sensor_data_hash = {
-          sensor_id: @sensor.id,
-          value: sensor_params['value'].to_f,
-          data_type: sensor_params['type'],
-          raw_data: sensor_params.to_json
+          sensor_id:  @sensor.id,
+          value:      sensor_params['value'].to_f,
+          data_type:  sensor_params['type'],
+          raw_data:   sensor_params.to_json
       }
       SensorDatum.create!(sensor_data_hash)
 
