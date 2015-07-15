@@ -1,12 +1,7 @@
-.text-center
-  %h2.ui.header
+.ui.menu
+  .header.item
     %img{src: asset_path('cat.svg'), height: '35px'}
-    %div.content
-      Умный Дом «Баст»
-      .sub.header Прототип
-
-.basic.ui.segment
-  .ui.menu
-    %a.item{'ui-sref' => 'dashboard'}
-      %i.fa.fa-home
-      Главная
+    Умный Дом «Баст»
+  %a.item{'ui-sref' => 'dashboard', 'ng-class' => '{active: $state.includes("dashboard")}'}
+    %i.fa.fa-home
+    Главная
