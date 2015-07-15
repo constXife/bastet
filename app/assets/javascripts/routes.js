@@ -29,6 +29,6 @@ angular.module('bastet.constants')
               templateUrl: 'sensors/show.html'
             }
           }
-        })
+        });
     }
   });

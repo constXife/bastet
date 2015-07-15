@@ -3,9 +3,7 @@
   %head
     %meta{charset: 'utf-8'}/
     = stylesheet_link_tag 'application', media: 'all'
-  %body{'ng-controller' => 'MainCtrl'}
+  %body
     %header{'ng-include' => "'shared/header.html'"}
     #content.container{'ui-view' => ''}
-    -#%footer{'ng-include' => "'shared/footer.html'"}
-
     = javascript_include_tag 'application'
