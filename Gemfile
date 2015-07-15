@@ -17,7 +17,6 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
-gem 'angularjs-rails', '~> 1.4.0'
 gem 'angular-rails-templates', '~> 0.2.0'
 gem 'haml-rails'
 
@@ -40,6 +39,13 @@ gem 'redis-rails'
 gem 'foreman'
 gem 'responders', '~> 2.0'
 gem 'quiet_assets', '~> 1.1.0'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-semantic-ui', '~> 2.0'
+  gem 'rails-assets-angular', '~> 1.4'
+  gem 'rails-assets-angular-resource', '~> 1.4'
+  gem 'rails-assets-angular-animate', '~> 1.4'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
