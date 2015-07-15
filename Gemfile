@@ -45,6 +45,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular', '~> 1.4'
   gem 'rails-assets-angular-resource', '~> 1.4'
   gem 'rails-assets-angular-animate', '~> 1.4'
+  gem 'rails-assets-ui-router', '~> 0.2'
+  gem 'rails-assets-d3', '~> 3.5'
 end
 
 group :development, :test do

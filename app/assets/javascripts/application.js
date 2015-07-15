@@ -20,7 +20,7 @@
 //= require angular-resource
 //= require angular-animate
 //= require angular-rails-templates
-//= require angular-ui-router
+//= require ui-router
 //= require angular-moment
 
 //= require semantic-ui
