@@ -1,7 +1,5 @@
 ## Bastet
 
-===
-
 [![Build Status](https://travis-ci.org/constXife/bastet.svg?branch=master)](https://travis-ci.org/constXife/bastet)
 [![Code Climate](https://codeclimate.com/github/constXife/bastet/badges/gpa.svg)](https://codeclimate.com/github/constXife/bastet)
 [![Test Coverage](https://codeclimate.com/github/constXife/bastet/badges/coverage.svg)](https://codeclimate.com/github/constXife/bastet/coverage)
@@ -34,4 +32,4 @@ Web-interface for Intelligent House.
 
 ## License
 
-Public Domain [<img src="http://i.creativecommons.org/p/zero/1.0/88x31.png">](http://creativecommons.org/publicdomain/zero/1.0/).
+[<img src="http://i.creativecommons.org/p/zero/1.0/88x31.png">](http://creativecommons.org/publicdomain/zero/1.0/).
