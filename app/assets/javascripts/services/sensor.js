@@ -9,8 +9,9 @@ angular
           responseType: 'json',
           isArray: true,
           transformResponse: function (data) {
-            if (typeof data == 'string')
+            if (typeof data === 'string') {
               data = JSON.parse(data);
+            }
             return data.sensors;
           }
         },
@@ -18,11 +19,12 @@ angular
           method: 'GET',
           responseType: 'json',
           transformResponse: function (data) {
-            if (typeof data == 'string')
+            if (typeof data === 'string') {
               data = JSON.parse(data);
+            }
             return data.sensor;
           }
         }
       }
-    )
+    );
   }]);

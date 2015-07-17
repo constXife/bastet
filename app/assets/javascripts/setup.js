@@ -1,9 +1,8 @@
 "use strict";
 
 angular.module('bastet')
-  .config(
-    ['$httpProvider', '$stateProvider', '$urlRouterProvider', '$logProvider', 'config', 'routes',
-    function($httpProvider, $stateProvider, $urlRouterProvider, $logProvider, config, routes) {
+  .config(function($httpProvider, $stateProvider, $urlRouterProvider,
+                   $logProvider, config, routes) {
     $httpProvider.defaults.headers.common.Accept = 'application/json';
 
     $urlRouterProvider.when('', '/dashboard');
@@ -12,8 +11,8 @@ angular.module('bastet')
 
     $logProvider.debugEnabled(config.is_development);
   }
-]);
+);
 
-angular.module('bastet').run(['amMoment', function(amMoment) {
+angular.module('bastet').run(function(amMoment) {
   amMoment.changeLocale('ru');
-}]);
+});
