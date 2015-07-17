@@ -36,7 +36,6 @@ gem 'em-hiredis'
 
 gem 'annotate', '~> 2.6.5'
 gem 'redis-rails'
-gem 'foreman'
 gem 'responders', '~> 2.0'
 gem 'quiet_assets', '~> 1.1.0'
 
