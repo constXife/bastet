@@ -15,6 +15,7 @@
 //= require moment-with-locales
 //= require moment-timezone-with-data
 //= require d3
+//= require cable
 
 //= require angular
 //= require angular-resource
@@ -33,3 +34,6 @@
 //= require_tree ./filters
 //= require_tree ./controllers
 //= require_tree ./templates
+
+window.App = {};
+App.cable = Cable.createConsumer('ws://127.0.0.1:28080');

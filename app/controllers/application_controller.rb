@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
   def home
     render text: '', layout: true
   end
+
+  def test
+    ActionCable.server.broadcast 'sensors',
+                                 message: 'test'
+    render :nothing => ''
+  end
 end
