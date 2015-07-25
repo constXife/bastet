@@ -38,6 +38,7 @@ gem 'annotate', '~> 2.6.5'
 gem 'redis-rails'
 gem 'responders', '~> 2.0'
 gem 'quiet_assets', '~> 1.1.0'
+gem 'jazz_fingers', github: 'constXife/jazz_fingers'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-semantic-ui', '~> 2.0'
@@ -60,7 +61,6 @@ group :development, :test do
 
   gem 'rspec-rails'
   gem 'faker'
-  gem 'jazz_fingers', github: 'constXife/jazz_fingers'
 
   gem 'rails_best_practices'
   gem 'factory_girl_rails'
