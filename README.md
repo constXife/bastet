@@ -10,6 +10,8 @@
 
 Web-interface for Intelligent House.
 
+![Web interface](http://cs625631.vk.me/v625631446/fd39/Sf0f2For0jU.jpg)
+
 ## Getting Started
 
 1. Clone the project at the command prompt if you haven't yet:
